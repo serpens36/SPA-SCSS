@@ -1,0 +1,11 @@
+@mixin margem-auto($width) {
+    width: $width;
+    margin: 0 auto;
+}
+
+@mixin fonte-configs-fscw($f-family, $f-size, $f-color, $f-weight) {
+    font-size: $f-size;
+    font-family: $f-family;
+    font-weight: $f-weight;
+    color: $f-color;
+}

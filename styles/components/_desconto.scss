@@ -1,0 +1,39 @@
+@use '../abstract/variaveis';
+@use '../abstract/mixin';
+
+#desconto{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    h4{
+        @include mixin.fonte-configs-fscw(variaveis.$fonte-titulos, 1.6rem, variaveis.$cor-primaria, 500);
+    }
+    p{
+        @include mixin.fonte-configs-fscw(variaveis.$fonte-textos, 1.2rem, variaveis.$cor-primaria, 400);
+    }
+    .input-btn{
+        $largura-input: 790px;
+        width: $largura-input;
+        height: 65px;
+        border: 1px solid variaveis.$cor-secundaria;
+        border-radius: 65px;
+        margin: 0 auto;
+        display: inline-flex;
+        input{
+            @include mixin.fonte-configs-fscw(variaveis.$fonte-textos, 1.2rem, variaveis.$cor-primaria, 400);
+            width: calc($largura-input * 0.65);
+            border: none;
+            outline: none;
+            margin-left: 2rem;
+        }
+        button{
+            @include mixin.fonte-configs-fscw(variaveis.$fonte-textos, 1.2rem, white, 500);
+            width: calc($largura-input * 0.35);
+            background: variaveis.$cor-secundaria;
+            border-radius: 0 65px 65px 0;
+            border: none;
+        }
+        
+    }
+}

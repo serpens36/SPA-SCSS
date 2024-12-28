@@ -1,0 +1,79 @@
+@use '../abstract/variaveis';
+@use '../abstract/mixin';
+
+header{
+    background: variaveis.$gradiente-primario;
+    padding: 2rem;
+        // Barra de Navegação
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.6rem;
+        .linha {
+            border-top: 1px solid black;
+            width: 80%;
+        }
+        ul {
+            display: inline-flex;
+            gap: 2rem;
+            li {
+                list-style-type: none;
+            }
+            a {
+                text-decoration: none;
+                @include mixin.fonte-configs-fscw(variaveis.$fonte-textos, 1rem, variaveis.$cor-primaria, 500);
+                &:hover{
+                    transform: scale(1.2);
+                    font-weight: 700;
+                }
+            }
+        } 
+    }
+        // Seção Home
+    #home {
+        max-width: 1040px;
+        @include mixin.margem-auto(80%);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .textos-home {
+            max-width: 464px;
+            h1 {
+                font-size: 42px;
+                color: variaveis.$cor-primaria;
+                margin-bottom: 2rem;
+                font-family: variaveis.$fonte-titulos;
+                span {
+                    color: variaveis.$cor-secundaria;
+                }
+            }
+            button {
+                background-color: variaveis.$cor-default;
+                font-size: 22px;
+                font-family: variaveis.$fonte-textos;
+                font-weight: 500;
+                border-radius: 40px;
+                padding: 1.5rem;
+                border: none;
+                color: black;
+                width: 17.5rem;
+                height: 4.125rem;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                &:hover{
+                    background: variaveis.$cor-secundaria;
+                    color: rgb(255, 255, 255);
+                }
+             }
+        }
+        .img-home {
+            max-width: 474px;
+            img {
+                width: 100%;
+            }
+        }
+    }
+}
